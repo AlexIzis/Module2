@@ -24,14 +24,14 @@ public class ArraysTraining {
      */
     public int[] sort(int[] valuesArray) {
         boolean flag = false;
-        while (!flag){
+        while (!flag) {
             flag = true;
-            for (int i = 0; i < valuesArray.length-1; i++){
-                if(valuesArray[i] > valuesArray[i+1]){
+            for (int i = 0; i < valuesArray.length - 1; i++) {
+                if (valuesArray[i] > valuesArray[i + 1]) {
                     flag = false;
                     int tmp = valuesArray[i];
-                    valuesArray[i] = valuesArray[i+1];
-                    valuesArray[i+1] = tmp;
+                    valuesArray[i] = valuesArray[i + 1];
+                    valuesArray[i + 1] = tmp;
                 }
             }
         }
@@ -47,7 +47,7 @@ public class ArraysTraining {
      * @return максимальное число или 0
      */
     public int maxValue(int... values) {
-        if(values == null){
+        if (values == null) {
             return 0;
         } else {
             int max = values[0];
@@ -70,7 +70,7 @@ public class ArraysTraining {
     public int[] reverse(int[] array) {
         int len = array.length;
         int[] revArr = new int[len];
-        int j = len-1;
+        int j = len - 1;
         for (int k : array) {
             revArr[j] = k;
             j -= 1;
@@ -90,15 +90,15 @@ public class ArraysTraining {
      */
     public int[] fibonacciNumbers(int numbersCount) {
         int[] fibArr = new int[numbersCount];
-        if (numbersCount < 1){
+        if (numbersCount < 1) {
             return fibArr;
         } else if (numbersCount == 1) {
             fibArr[0] = 0;
         } else {
             fibArr[0] = 0;
             fibArr[1] = 1;
-            for (int i = 2; i < numbersCount; i++){
-                fibArr[i] = fibArr[i-1] + fibArr[i-2];
+            for (int i = 2; i < numbersCount; i++) {
+                fibArr[i] = fibArr[i - 1] + fibArr[i - 2];
             }
         }
         return fibArr;
@@ -119,14 +119,13 @@ public class ArraysTraining {
         for (int j : set) {
             map.put(j, 0);
         }
-        for (int i : tmpArr){
-            map.put(i, map.get(i)+1);
+        for (int i : tmpArr) {
+            map.put(i, map.get(i) + 1);
         }
         int maxValue = 0;
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            int key = entry.getKey();
             int value = entry.getValue();
-            if(value >= maxValue){
+            if (value >= maxValue) {
                 maxValue = value;
             }
         }

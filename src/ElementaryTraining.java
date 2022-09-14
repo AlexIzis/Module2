@@ -46,7 +46,7 @@ public class ElementaryTraining {
      * @return новое значение
      */
     public int changeValue(int value) {
-        if(value > 3){
+        if (value > 3) {
             value += 10;
         } else {
             value -= 10;
@@ -65,7 +65,7 @@ public class ElementaryTraining {
      * @return новое число
      */
     public int swapNumbers(int value) {
-        if (value < 10){
+        if (value < 10) {
             return value;
         } else {
             String st = String.valueOf(value);
@@ -89,14 +89,14 @@ public class ElementaryTraining {
      * @return новое число
      */
     public int zeroEvenNumber(int value) {
-        if (value < 10){
+        if (value < 10) {
             return value;
         } else {
             String st = String.valueOf(value);
             char[] chars = st.toCharArray();
-            for (int i = 0; i < chars.length; i++){
+            for (int i = 0; i < chars.length; i++) {
                 int y = Character.getNumericValue(chars[i]);
-                if(y%2 == 0) {
+                if (y % 2 == 0) {
                     chars[i] = '0';
                 }
             }

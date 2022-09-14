@@ -5,16 +5,17 @@ public class Main {
         showFirstFileResult();
         showSecondFileResult();
     }
-    public static void showFirstFileResult(){
+
+    public static void showFirstFileResult() {
         ElementaryTraining methods = new ElementaryTraining();
         System.out.println("Первая часть");
         System.out.println("Среднее значение введённых параметров.");
         System.out.println("Результат первого метода:");
-        System.out.println(methods.averageValue(2,3));
+        System.out.println(methods.averageValue(2, 3));
 
         System.out.println("Манипуляция с числами и возврат их суммы.");
         System.out.println("Результат второго метода:");
-        System.out.println(methods.complicatedAmount(2,2,2));
+        System.out.println(methods.complicatedAmount(2, 2, 2));
 
         System.out.println("Замена значения в соответствии с условием.");
         System.out.println("Результат третьего метода:");
@@ -29,7 +30,7 @@ public class Main {
         System.out.println(methods.zeroEvenNumber(32451));
     }
 
-    public static void showSecondFileResult(){
+    public static void showSecondFileResult() {
         ArraysTraining methods = new ArraysTraining();
         int[] numbers = {1, 6, 3, 7, 5, 5, 5};
 
