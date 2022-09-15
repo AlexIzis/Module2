@@ -47,7 +47,7 @@ public class ArraysTraining {
      * @return максимальное число или 0
      */
     public int maxValue(int... values) {
-        if (values == null) {
+        if (values.length == 0) {
             return 0;
         } else {
             int max = values[0];
@@ -69,13 +69,12 @@ public class ArraysTraining {
      */
     public int[] reverse(int[] array) {
         int len = array.length;
-        int[] revArr = new int[len];
-        int j = len - 1;
-        for (int k : array) {
-            revArr[j] = k;
-            j -= 1;
+        for (int i = 0; i < len/2; i++) {
+            int tmp = array[i];
+            array[i] = array[len - i - 1];
+            array[len - i - 1] = tmp;
         }
-        return revArr;
+        return array;
     }
 
     /**
