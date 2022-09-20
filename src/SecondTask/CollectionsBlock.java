@@ -1,5 +1,6 @@
-import java.util.Collections;
-import java.util.List;
+package SecondTask;
+
+import java.util.*;
 
 /**
  * Набор тренингов по работе со строками в java.
@@ -23,8 +24,11 @@ public class CollectionsBlock<T extends Comparable> {
      * @throws NullPointerException если один из параметров null
      */
     public List<T> collectionTask0(List<T> firstList, List<T> secondList) {
-        //TODO: implement it
-        return Collections.emptyList();
+        if ((firstList == null) || (secondList == null)) {
+            throw new NullPointerException("One of the parameters is null");
+        }
+        firstList.addAll(secondList);
+        return firstList;
     }
 
     /**
@@ -35,8 +39,17 @@ public class CollectionsBlock<T extends Comparable> {
      * @throws NullPointerException если один из параметров null
      */
     public List<T> collectionTask1(List<T> inputList) {
-        //TODO: implement it
-        return Collections.emptyList();
+        if (inputList == null) {
+            throw new NullPointerException("One of the parameters is null");
+        }
+        ArrayList<T> tmpList = new ArrayList<>();
+        for (int i = 0; i < inputList.size(); i++) {
+            tmpList.add(inputList.get(i));
+            for (int j = 0; j <= i; j++) {
+                tmpList.add(inputList.get(j));
+            }
+        }
+        return tmpList;
     }
 
     /**
@@ -47,9 +60,13 @@ public class CollectionsBlock<T extends Comparable> {
      * @return <tt>true</tt> если множества списков совпадают
      * @throws NullPointerException если один из параметров null
      */
-    public boolean collectionTask2(List<T> firstList,List<T> secondList) {
-        //TODO: implement it
-        return true;
+    public boolean collectionTask2(List<T> firstList, List<T> secondList) {
+        if ((firstList == null) || (secondList == null)) {
+            throw new NullPointerException("One of the parameters is null");
+        }
+        HashSet<T> set1 = new HashSet<>(firstList);
+        HashSet<T> set2 = new HashSet<>(secondList);
+        return set1.equals(set2);
     }
 
     /**
@@ -64,8 +81,24 @@ public class CollectionsBlock<T extends Comparable> {
      * @throws NullPointerException если один из параметров null
      */
     public List<T> collectionTask3(List<T> inputList, int n) {
-        //TODO: implement it
-        return Collections.emptyList();
+        if ((inputList == null) || (n == 0)) {
+            throw new NullPointerException("One of the parameters is null");
+        }
+        if (n < 0) {
+            n *= -1;
+            for (int i = 0; i < n; i++) {
+                T tmp = inputList.get(0);
+                inputList.add(tmp);
+                inputList.remove(0);
+            }
+        } else {
+            for (int i = 0; i < n; i++) {
+                T tmp = inputList.get(inputList.size() - 1);
+                inputList.add(0, tmp);
+                inputList.remove(inputList.size() - 1);
+            }
+        }
+        return inputList;
     }
 
     /**

@@ -1,3 +1,6 @@
+import FirstTask.ArraysTraining;
+import FirstTask.ElementaryTraining;
+
 import java.util.Arrays;
 
 public class ShowFistTask {
