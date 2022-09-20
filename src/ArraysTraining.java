@@ -69,7 +69,7 @@ public class ArraysTraining {
      */
     public int[] reverse(int[] array) {
         int len = array.length;
-        for (int i = 0; i < len/2; i++) {
+        for (int i = 0; i < len / 2; i++) {
             int tmp = array[i];
             array[i] = array[len - i - 1];
             array[len - i - 1] = tmp;
