@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a59b2b9a-448a-4540-a4c4-528c6c5c0d85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ShowSecondTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/ArraysTraining.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/ElementaryTraining.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/ShowFistTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/ShowFistTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ArraysTraining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTask/ArraysTraining.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CollectionsBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SecondTask/CollectionsBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElementaryTraining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FirstTask/ElementaryTraining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/SecondTask/CollectionsBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/SecondTask/CollectionsBlock.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowFistTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowFistTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/CollectionsBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SecondTask/CollectionsBlock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +32,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -80,16 +74,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SecondTask/CollectionsBlock.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

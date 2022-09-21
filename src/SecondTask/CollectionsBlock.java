@@ -112,8 +112,15 @@ public class CollectionsBlock<T extends Comparable> {
      * @throws NullPointerException если один из параметров null
      */
     public List<String> collectionTask4(List<String> inputList, String a, String b) {
-        //TODO: implement it
-        return Collections.emptyList();
+        if ((inputList == null) || (a.isEmpty()) || (b.isEmpty())) {
+            throw new NullPointerException("One of the parameters is null");
+        }
+        for (int i = 0; i < inputList.size(); i++) {
+            if (Objects.equals(inputList.get(i), a)) {
+                inputList.set(i, b);
+            }
+        }
+        return inputList;
     }
 
     /*
@@ -122,8 +129,124 @@ public class CollectionsBlock<T extends Comparable> {
       Дан список студентов. Элемент списка содержит фамилию, имя, отчество, год рождения,
       курс, номер группы, оценки по пяти предметам. Заполните список и выполните задание.
       Упорядочите студентов по курсу, причем студенты одного курса располагались
-      в алфавитном порядке. Найдите средний балл каждой группы по каждому предмету.
+      в алфавитном порядке.
+      Найдите средний балл каждой группы по каждому предмету.
       Определите самого старшего студента и самого младшего студентов.
       Для каждой группы найдите лучшего с точки зрения успеваемости студента.
      */
+    static class Student {
+        String surname;
+        String name;
+        String patronymic;
+        Integer yearOfBirth;
+        Integer course;
+        Integer numberOfGroup;
+        ArrayList<Integer> evaluations;
+
+        Student(String surname, String name, String patronymic, Integer yearOfBirth, Integer course,
+                Integer numberOfGroup, ArrayList<Integer> evaluations) {
+            this.surname = surname;
+            this.name = name;
+            this.patronymic = patronymic;
+            this.yearOfBirth = yearOfBirth;
+            this.course = course;
+            this.numberOfGroup = numberOfGroup;
+            this.evaluations = evaluations;
+        }
+
+        public String getSurname() {
+            return surname;
+        }
+
+        public Integer getYearOfBirth() {
+            return yearOfBirth;
+        }
+
+        public Integer getCourse() {
+            return course;
+        }
+
+        public Integer getNumberOfGroup() {
+            return numberOfGroup;
+        }
+
+        public ArrayList<Integer> getEvaluations() {
+            return evaluations;
+        }
+    }
+
+    static class StudentSurnameComparator implements Comparator<Student> {
+        @Override
+        public int compare(Student o1, Student o2) {
+            return o1.getSurname().compareTo(o2.getSurname());
+        }
+    }
+
+    static class StudentCourseComparator implements Comparator<Student> {
+        @Override
+        public int compare(Student o1, Student o2) {
+            return o1.getCourse().compareTo(o2.getCourse());
+        }
+    }
+
+    static class StudentAgeComparator implements Comparator<Student> {
+
+        @Override
+        public int compare(Student o1, Student o2) {
+            return o1.getYearOfBirth().compareTo(o2.getYearOfBirth());
+        }
+    }
+
+    static class StudentGroupComparator implements Comparator<Student>{
+
+        @Override
+        public int compare(Student o1, Student o2) {
+            return o1.getNumberOfGroup().compareTo(o2.getNumberOfGroup());
+        }
+    }
+
+    public void collectionTask5() {
+        ArrayList<Student> studentList = new ArrayList<>();
+        studentList.add(new Student("Иванов", "Иван", "Иванович", 2000, 4,
+                1, new ArrayList<>(List.of(5, 5, 5, 5, 5))));
+        studentList.add(new Student("Сидоров", "Иван", "Иванович", 1999, 4,
+                1, new ArrayList<>(List.of(5, 4, 5, 4, 5))));
+        studentList.add(new Student("Рыбкин", "Иван", "Иванович", 2000, 3,
+                1, new ArrayList<>(List.of(5, 5, 4, 5, 5))));
+        studentList.add(new Student("Мискин", "Иван", "Иванович", 2000, 3,
+                1, new ArrayList<>(List.of(4, 5, 4, 5, 4))));
+        studentList.add(new Student("Петров", "Иван", "Иванович", 2001, 4,
+                2, new ArrayList<>(List.of(5, 4, 5, 5, 5))));
+        studentList.add(new Student("Долгов", "Иван", "Иванович", 2000, 4,
+                2, new ArrayList<>(List.of(4, 5, 5, 3, 5))));
+
+        System.out.println("1");
+        Comparator<Student> comp1 = new StudentCourseComparator().thenComparing(new StudentSurnameComparator());
+        studentList.sort(comp1);
+        for (Student s: studentList){
+            System.out.println(s.getSurname() + " " + s.getCourse());
+        }
+        //Найдите средний балл каждой группы по каждому предмету
+        System.out.println("2");
+        Comparator<Student> comp2 = new StudentCourseComparator().thenComparing(new StudentGroupComparator());
+        ArrayList<ArrayList<Integer>> listOLists = new ArrayList<ArrayList<Integer>>();
+        studentList.sort(comp2);
+//        for (int i = 1; i < studentList.size() - 1; i++){
+//            if (Objects.equals(studentList.get(i).getNumberOfGroup(), studentList.get(i - 1).getNumberOfGroup())){
+//
+//            }
+//        }
+
+        System.out.println("3");
+        Comparator<Student> comp3 = new StudentAgeComparator();
+        studentList.sort(comp3);
+        Student st1 = studentList.get(0);
+        Student st2 = studentList.get(studentList.size()-1);
+        System.out.println(st1.getSurname() + " " + st1.getYearOfBirth());
+        System.out.println(st2.getSurname() + " " + st2.getYearOfBirth());
+
+        System.out.println("4");
+        studentList.sort(comp2);
+
+    }
 }
