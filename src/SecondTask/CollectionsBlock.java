@@ -169,10 +169,6 @@ public class CollectionsBlock<T extends Comparable> {
         public Integer getNumberOfGroup() {
             return numberOfGroup;
         }
-
-        public ArrayList<Integer> getEvaluations() {
-            return evaluations;
-        }
     }
 
     static class StudentSurnameComparator implements Comparator<Student> {
@@ -205,20 +201,6 @@ public class CollectionsBlock<T extends Comparable> {
         }
     }
 
-    public ArrayList<ArrayList<Integer>> findStudents(ArrayList<Student> students, int cntG, int cntC) {
-        ArrayList<ArrayList<Integer>> listOLists = new ArrayList<>();
-        ArrayList<Integer> tmpMarks = new ArrayList<>();
-        for (int i = 0; i < students.size() - 1; i++) {
-            Student curSt = students.get(i);
-            if ((curSt.numberOfGroup == cntG) && (curSt.course == cntC)) {
-                tmpMarks.addAll(curSt.getEvaluations());
-                listOLists.add(new ArrayList<>(tmpMarks));
-                tmpMarks.clear();
-            }
-        }
-        return listOLists;
-    }
-
     public void collectionTask5() {
         ArrayList<Student> studentList = new ArrayList<>();
         studentList.add(new Student("Иванов", "Иван", "Иванович", 2000, 4,
@@ -238,7 +220,7 @@ public class CollectionsBlock<T extends Comparable> {
         System.out.println("1");
         Comparator<Student> comp1 = new StudentCourseComparator().thenComparing(new StudentSurnameComparator());
         studentList.sort(comp1);
-        for (Student s: studentList){
+        for (Student s : studentList) {
             System.out.println(s.getSurname() + " " + s.getCourse());
         }
 
@@ -251,7 +233,7 @@ public class CollectionsBlock<T extends Comparable> {
         for (int i = 1; i <= studentList.size() - 1; i++) {
             Student curS = studentList.get(i);
             Student prevS = studentList.get(i - 1);
-            if ((curS.numberOfGroup == prevS.numberOfGroup) && (curS.course == prevS.course)) {
+            if ((Objects.equals(curS.numberOfGroup, prevS.numberOfGroup)) && (Objects.equals(curS.course, prevS.course))) {
                 ArrayList<Integer> oneStudentMarks = new ArrayList<>();
                 for (int j = 0; j < 5; j++) {
                     oneStudentMarks.add((curS.evaluations.get(j) + prevS.evaluations.get(j)));
@@ -259,7 +241,7 @@ public class CollectionsBlock<T extends Comparable> {
                 marks.add(new ArrayList<>(oneStudentMarks));
                 oneStudentMarks.clear();
                 cntS++;
-            } else if ((curS.numberOfGroup != prevS.numberOfGroup) || (curS.course != prevS.course)) {
+            } else if ((!Objects.equals(curS.numberOfGroup, prevS.numberOfGroup)) || (!Objects.equals(curS.course, prevS.course))) {
                 ArrayList<Integer> oneStudentMarks = marks.get(cntG - 1);
                 for (int j = 0; j <= oneStudentMarks.size() - 1; j++) {
                     oneStudentMarks.set(j, oneStudentMarks.get(j) / cntS);
@@ -273,7 +255,7 @@ public class CollectionsBlock<T extends Comparable> {
         for (int j = 0; j <= oneStudentMarks.size() - 1; j++) {
             oneStudentMarks.set(j, oneStudentMarks.get(j) / cntS);
         }
-        for (ArrayList<Integer> l: marks){
+        for (ArrayList<Integer> l : marks) {
             System.out.println(l.toString());
         }
 
@@ -281,7 +263,7 @@ public class CollectionsBlock<T extends Comparable> {
         Comparator<Student> comp3 = new StudentAgeComparator();
         studentList.sort(comp3);
         Student st1 = studentList.get(0);
-        Student st2 = studentList.get(studentList.size()-1);
+        Student st2 = studentList.get(studentList.size() - 1);
         System.out.println(st1.getSurname() + " " + st1.getYearOfBirth());
         System.out.println(st2.getSurname() + " " + st2.getYearOfBirth());
 
@@ -289,35 +271,35 @@ public class CollectionsBlock<T extends Comparable> {
         studentList.sort(comp2);
         cntS = 1;
         cntG = 1;
-        oneStudentMarks = new ArrayList<Integer>(Collections.nCopies(studentList.size(), 0));
+        oneStudentMarks = new ArrayList<>(Collections.nCopies(studentList.size(), 0));
         for (int i = 1; i <= studentList.size() - 1; i++) {
             Student curS = studentList.get(i);
             Student prevS = studentList.get(i - 1);
-            if ((curS.numberOfGroup == prevS.numberOfGroup) && (curS.course == prevS.course)) {
+            if ((Objects.equals(curS.numberOfGroup, prevS.numberOfGroup)) && (Objects.equals(curS.course, prevS.course))) {
                 for (int j = 0; j < 5; j++) {
                     oneStudentMarks.set(i, oneStudentMarks.get(i) + prevS.evaluations.get(j));
-                    oneStudentMarks.set(i - 1, oneStudentMarks.get(i-1) + curS.evaluations.get(j));
+                    oneStudentMarks.set(i - 1, oneStudentMarks.get(i - 1) + curS.evaluations.get(j));
                 }
                 cntS++;
-            } else if ((curS.numberOfGroup != prevS.numberOfGroup) || (curS.course != prevS.course)) {
+            } else if ((!Objects.equals(curS.numberOfGroup, prevS.numberOfGroup)) || (!Objects.equals(curS.course, prevS.course))) {
                 int maxSurname = 0;
                 int maxValue = 0;
-                for (int j = 0; j < oneStudentMarks.size() -1; j++){
-                    if (oneStudentMarks.get(j) > maxValue){
+                for (int j = 0; j < oneStudentMarks.size() - 1; j++) {
+                    if (oneStudentMarks.get(j) > maxValue) {
                         maxValue = oneStudentMarks.get(j);
                         maxSurname = j;
                     }
                 }
                 System.out.println(studentList.get(maxSurname).surname);
-                oneStudentMarks = new ArrayList<Integer>(Collections.nCopies(studentList.size(), 0));
+                oneStudentMarks = new ArrayList<>(Collections.nCopies(studentList.size(), 0));
                 cntG++;
                 cntS = 1;
             }
         }
         int maxSurname = 0;
         int maxValue = 0;
-        for (int j = 0; j < oneStudentMarks.size() -1; j++){
-            if (oneStudentMarks.get(j) > maxValue){
+        for (int j = 0; j < oneStudentMarks.size() - 1; j++) {
+            if (oneStudentMarks.get(j) > maxValue) {
                 maxValue = oneStudentMarks.get(j);
                 maxSurname = j;
             }
