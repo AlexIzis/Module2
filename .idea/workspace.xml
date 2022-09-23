@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a59b2b9a-448a-4540-a4c4-528c6c5c0d85" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/SecondTask/Dynamic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SecondTask/Mobile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SecondTask/TaskV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SecondTask/TaskVI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SecondTask/TaskVII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SecondTask/Time.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SecondTask/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SecondTask/PracticeTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/ShowSecondTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/ShowSecondTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShowSecondTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowSecondTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

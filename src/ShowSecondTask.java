@@ -20,7 +20,7 @@ public class ShowSecondTask {
     }
 
     public static void showSecondFileResult(){
-
+        PracticeTask.start();
     }
 
     public static void showThirdFileResult(){
