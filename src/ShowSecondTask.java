@@ -1,5 +1,4 @@
-import SecondTask.CollectionsBlock;
-import SecondTask.StringsTraining;
+import SecondTask.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +17,10 @@ public class ShowSecondTask {
         System.out.println(methods.collectionTask3(list2, 2));
         System.out.println(methods.collectionTask4(listWords, "Two", "Second"));
         methods.collectionTask5();
+    }
+
+    public static void showSecondFileResult(){
+
     }
 
     public static void showThirdFileResult(){
