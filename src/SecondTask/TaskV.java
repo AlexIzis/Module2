@@ -162,8 +162,11 @@ public class TaskV {
                 4, 110, 140, 0, 70));
         clientList.add(new Client(5, "Рыбкин", "Иван", "Иванович", "Самара",
                 5, 102, 170, 10, 220));
+        System.out.println("Время городских переговоров превышает заданное");
         TaskV.task1(clientList, 100);
+        System.out.println("Абоненты, которые пользовались междугородней связью");
         TaskV.task2(clientList);
+        System.out.println("Абоненты в алфавитном порядке");
         TaskV.task3(clientList);
     }
 }

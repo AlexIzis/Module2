@@ -217,14 +217,14 @@ public class CollectionsBlock<T extends Comparable> {
                 2, new ArrayList<>(List.of(4, 5, 5, 3, 5))));
 
 
-        System.out.println("1");
+        System.out.println("Упорядочить по курсу");
         Comparator<Student> comp1 = new StudentCourseComparator().thenComparing(new StudentSurnameComparator());
         studentList.sort(comp1);
         for (Student s : studentList) {
             System.out.println(s.getSurname() + " " + s.getCourse());
         }
 
-        System.out.println("2");
+        System.out.println("Найти средний балл каждой группы по каждому предмету");
         Comparator<Student> comp2 = new StudentCourseComparator().thenComparing(new StudentGroupComparator());
         studentList.sort(comp2);
         int cntS = 1;
@@ -259,7 +259,7 @@ public class CollectionsBlock<T extends Comparable> {
             System.out.println(l.toString());
         }
 
-        System.out.println("3");
+        System.out.println("Определить самого старшего и самого младшего студентов");
         Comparator<Student> comp3 = new StudentAgeComparator();
         studentList.sort(comp3);
         Student st1 = studentList.get(0);
@@ -267,7 +267,7 @@ public class CollectionsBlock<T extends Comparable> {
         System.out.println(st1.getSurname() + " " + st1.getYearOfBirth());
         System.out.println(st2.getSurname() + " " + st2.getYearOfBirth());
 
-        System.out.println("4");
+        System.out.println("Для каждой группы найти лучшего с точки зрения успеваемости студента");
         studentList.sort(comp2);
         cntS = 1;
         cntG = 1;

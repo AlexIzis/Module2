@@ -123,6 +123,9 @@ public class PracticeTask {
     }
 
     public static void start() {
+        System.out.println("Задание с лямбдой");
+        PracticeTask.lambdaTask();
+        System.out.println("Задание на отслеживание координат");
         PracticeTask.traveler();
     }
 }
