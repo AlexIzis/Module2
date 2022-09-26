@@ -48,7 +48,7 @@ public class PracticeTask {
 
         @Override
         public void area() {
-            System.out.println(2 * this.length);
+            System.out.println(this.length * this.length);
         }
     }
 
@@ -66,7 +66,7 @@ public class PracticeTask {
 
         @Override
         public void area() {
-            System.out.println(this.diameter * 2 * (0.25 * Math.PI));
+            System.out.println(this.diameter * this.diameter * Math.PI * 0.25); /* S = (1/4 * pi * D^2) */
         }
     }
 
@@ -90,23 +90,55 @@ public class PracticeTask {
         DOWN
     }
 
-    public static int[] doOneStep(int [] coo, Directions direction){
-        switch (direction){
-            case UP -> coo[1] += 1;
-            case DOWN -> coo[1] -= 1;
-            case LEFT -> coo[0] -= 1;
-            case RIGHT -> coo[0] +=1;
+    static class Coordinate{
+        int x;
+        int y;
+
+        public Coordinate(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
-        return coo;
+
+        public int getX() {
+            return x;
+        }
+
+        public void setX(int x) {
+            this.x = x;
+        }
+
+        public int getY() {
+            return y;
+        }
+
+        public void setY(int y) {
+            this.y = y;
+        }
     }
 
-    public static void doManySteps(int[] location, ArrayList<Directions> directionsList){
+    public static Coordinate doOneStep(Coordinate coo, Directions direction){
+        Coordinate newCoordinate = coo;
+        int curX = coo.getX();
+        int cutY = coo.getY();
+        switch (direction){
+            case UP -> newCoordinate.setY(cutY+1);
+            case DOWN -> newCoordinate.setY(cutY-1);
+            case LEFT -> newCoordinate.setX(curX-1);
+            case RIGHT -> newCoordinate.setX(curX+1);
+        }
+        return newCoordinate;
+    }
+
+    public static void doManySteps(Coordinate location, ArrayList<Directions> directionsList){
+        Coordinate tmpC = location;
         for (int i = 0; i < directionsList.size(); i++){
-            System.out.println(Arrays.toString(doOneStep(location, directionsList.get(i))));
+            Coordinate c = doOneStep(tmpC, directionsList.get(i));
+            System.out.println("[" + c.getX() + ";" + c.getY() + "]");
+            tmpC = c;
         }
     }
     public static void traveler(){
-        int[] startPosition = new int[] {0,0};
+        Coordinate startPosition = new Coordinate(1,1);
         ArrayList<Directions> directions = new ArrayList<>();
         directions.add(Directions.UP);
         directions.add(Directions.UP);
@@ -124,7 +156,7 @@ public class PracticeTask {
 
     public static void start() {
         System.out.println("Задание с лямбдой");
-        PracticeTask.lambdaTask();
+        //PracticeTask.lambdaTask();
         System.out.println("Задание на отслеживание координат");
         PracticeTask.traveler();
     }

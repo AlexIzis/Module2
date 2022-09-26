@@ -10,9 +10,9 @@ public class Main {
     }
 
     public static void showSecondJavaTask() {
-        ShowSecondTask.showFirstFileResult();
-        ShowSecondTask.showSecondFileResult();
-        ShowSecondTask.showThirdFileResult();
+        //ShowSecondTask.showFirstFileResult();
+        //ShowSecondTask.showSecondFileResult();
+        //ShowSecondTask.showThirdFileResult();
         ShowSecondTask.showFourthFileResult();
     }
 
