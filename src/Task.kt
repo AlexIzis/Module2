@@ -13,24 +13,37 @@ class Task {
         }
     }
 
-    fun User.isLarge(){
-        if (this.age >= 18){
+    fun User.isLarge() {
+        if (this.age >= 18) {
             println(this.name)
         } else {
             throw Exception("Младше 18")
         }
     }
 
-    interface AuthCallback{
+    sealed class Action
+    class Registration : Action()
+    class Login(val user: User) : Action()
+    class Logout : Action()
+
+    fun doAction(action: Action){
+        when (action) {
+            is Login -> auth { action }
+            is Registration -> println("Registration started")
+            is Logout -> println("Logout started")
+        }
+    }
+
+    interface AuthCallback {
         fun authSuccess()
         fun authFailed()
     }
 
-    fun updateCache(){
+    fun updateCache() {
         println("Кэш обновлен")
     }
 
-    inline fun auth(updateCache: () -> Unit){
+    inline fun auth(updateCache: () -> Unit) {
 
     }
 
@@ -51,12 +64,12 @@ class Task {
         }
         //Пункт 6
         val fullUserList = mutableListOf<User>()
-        for (user in userList){
-            if (user.type == Type.FULL){
+        for (user in userList) {
+            if (user.type == Type.FULL) {
                 fullUserList.add(user)
             }
         }
-        for (user in fullUserList){
+        for (user in fullUserList) {
             println(user.name)
         }
         //Пункт 7
@@ -65,7 +78,7 @@ class Task {
             userNameList.add(index, user.name)
         }
         //Пункт 9
-        val anonymous = object: AuthCallback{
+        val anonymous = object : AuthCallback {
             override fun authSuccess() {
                 println("Авторизация пройдена")
             }
