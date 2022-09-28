@@ -2,13 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a59b2b9a-448a-4540-a4c4-528c6c5c0d85" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Task.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/SecondTask/PracticeTask$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/SecondTask/PracticeTask$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/SecondTask/PracticeTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/SecondTask/PracticeTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LearnJavaApp/ShowSecondTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LearnJavaApp/ShowSecondTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LearnJavaApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LearnJavaApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstTask/ArraysTraining.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstTask/ElementaryTraining.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SecondTask/PracticeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SecondTask/PracticeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/ClassesBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/CollectionsBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/Dynamic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/Mobile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/PracticeTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/StringsTraining.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/TaskV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/TaskVI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/TaskVII.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/Time.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecondTask/Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowFistTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowSecondTask.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
