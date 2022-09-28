@@ -2,17 +2,18 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class Task {
+    //Пункт 2
     enum class Type {
         DEMO, FULL
     }
-
+    //Пункт 3
     class User(var id: Int, var name: String, var age: Int, var type: Type) {
         val startTime: String by lazy {
             LocalDateTime.now()
                     .format(DateTimeFormatter.ofPattern("hh:mm:ss"))
         }
     }
-
+    //Пункт 8
     fun User.isLarge() {
         if (this.age >= 18) {
             println(this.name)
@@ -21,19 +22,31 @@ class Task {
         }
     }
 
+    val anonymous = object : AuthCallback {
+        override fun authSuccess() {
+            println("Авторизация пройдена")
+        }
+
+        override fun authFailed() {
+            println("Авторизация не пройдена")
+        }
+
+    }
+    //Пункт 12
     sealed class Action
     class Registration : Action()
     class Login(val user: User) : Action()
     class Logout : Action()
 
+    //Пункт 13
     fun doAction(action: Action){
         when (action) {
-            is Login -> auth { action }
+            is Login -> auth(action.user, anonymous) { updateCache() }
             is Registration -> println("Registration started")
             is Logout -> println("Logout started")
         }
     }
-
+    //Пункт 9
     interface AuthCallback {
         fun authSuccess()
         fun authFailed()
@@ -42,9 +55,14 @@ class Task {
     fun updateCache() {
         println("Кэш обновлен")
     }
-
-    inline fun auth(updateCache: () -> Unit) {
-
+    //Пункт 10-11
+    inline fun auth(user: User, callback: AuthCallback, updateCache: () -> Unit) {
+        if (user.age >= 18){
+            callback.authSuccess()
+            updateCache()
+        } else {
+            callback.authFailed()
+        }
     }
 
     fun start() {
@@ -76,17 +94,6 @@ class Task {
         val userNameList = mutableListOf<String>()
         userList.forEachIndexed { index, user ->
             userNameList.add(index, user.name)
-        }
-        //Пункт 9
-        val anonymous = object : AuthCallback {
-            override fun authSuccess() {
-                println("Авторизация пройдена")
-            }
-
-            override fun authFailed() {
-                println("Авторизация не пройдена")
-            }
-
         }
     }
 }
