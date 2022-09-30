@@ -95,8 +95,11 @@ class Task {
         for (user in userList) {
             userNameList.add(user.name)
         }
-        println(userNameList[0])
-        println(userNameList[userNameList.size - 1])
+        userList.forEach { user ->
+            userNameList.add(user.name)
+        }
+        println(userNameList.first())
+        println(userNameList.last())
     }
 }
 
