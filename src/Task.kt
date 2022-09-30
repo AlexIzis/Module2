@@ -6,13 +6,15 @@ class Task {
     enum class Type {
         DEMO, FULL
     }
+
     //Пункт 3
-    class User(var id: Int, var name: String, var age: Int, var type: Type) {
+    data class User(var id: Int, var name: String, var age: Int, var type: Type) {
         val startTime: String by lazy {
             LocalDateTime.now()
                     .format(DateTimeFormatter.ofPattern("hh:mm:ss"))
         }
     }
+
     //Пункт 8
     fun User.isLarge() {
         if (this.age >= 18) {
@@ -32,6 +34,7 @@ class Task {
         }
 
     }
+
     //Пункт 12
     sealed class Action
     class Registration : Action()
@@ -39,13 +42,14 @@ class Task {
     class Logout : Action()
 
     //Пункт 13
-    fun doAction(action: Action){
+    fun doAction(action: Action) {
         when (action) {
             is Login -> auth(action.user, anonymous) { updateCache() }
             is Registration -> println("Registration started")
             is Logout -> println("Logout started")
         }
     }
+
     //Пункт 9
     interface AuthCallback {
         fun authSuccess()
@@ -55,9 +59,10 @@ class Task {
     fun updateCache() {
         println("Кэш обновлен")
     }
+
     //Пункт 10-11
     inline fun auth(user: User, callback: AuthCallback, updateCache: () -> Unit) {
-        if (user.age >= 18){
+        if (user.age >= 18) {
             callback.authSuccess()
             updateCache()
         } else {
@@ -81,20 +86,17 @@ class Task {
             this.add(User(5, "david", 20, Type.FULL))
         }
         //Пункт 6
-        val fullUserList = mutableListOf<User>()
-        for (user in userList) {
-            if (user.type == Type.FULL) {
-                fullUserList.add(user)
-            }
-        }
+        val fullUserList = userList.filter { it.type == Type.FULL }
         for (user in fullUserList) {
             println(user.name)
         }
         //Пункт 7
         val userNameList = mutableListOf<String>()
-        userList.forEachIndexed { index, user ->
-            userNameList.add(index, user.name)
+        for (user in userList) {
+            userNameList.add(user.name)
         }
+        println(userNameList[0])
+        println(userNameList[userNameList.size - 1])
     }
 }
 
