@@ -91,15 +91,9 @@ class Task {
             println(user.name)
         }
         //Пункт 7
-        val userNameList = mutableListOf<String>()
-        for (user in userList) {
-            userNameList.add(user.name)
-        }
-        userList.forEach { user ->
-            userNameList.add(user.name)
-        }
-        println(userNameList.first())
-        println(userNameList.last())
+        val userNameList = userList.map{ it.name }
+        println(userNameList.firstOrNull())
+        println(userNameList.lastOrNull())
     }
 }
 
